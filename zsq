@@ -1,0 +1,25 @@
+<script>
+    (function(w,d){
+    try{
+        var l,url='//mdskip.taobao.com/core/initItemDetail.htm?isUseInventoryCenter=true&cartEnable=true&service3C=false&isApparel=false&isSecKill=false&tmallBuySupport=true&isAreaSell=true&tryBeforeBuy=false&offlineShop=false&itemId=547620782300&showShopProm=false&isPurchaseMallPage=false&itemGmtModified=1551400131000&isRegionLevel=true&household=false&sellerPreview=false&queryMemberRight=false&addressLevel=3&isForbidBuyItem=false',isg=document.cookie.match('(^|;) ?l=([^;]*)(;|$)'),isg2 =document.cookie.match('(^|;) ?isg=([^;]*)(;|$)');
+        if(!url){return;}
+        var arr=["callback=setMdskip","timestamp="+(+new Date()),"isg="+(isg&&isg[2]),"isg2="+(isg2&&isg2[2])],reg=/[?&^](ip|campaignId|key|abt|cat_id|q|u_channel|areaId|sdShopId)=([^&]+)/g,params=w.location.search;
+        while(r=reg.exec(params)){arr.push(r[1]+"="+r[2]);}
+        d.referrer && (arr.push("ref="+encodeURIComponent(d.referrer)));
+        w.onMdskip=function(c){l=l?c(l):c}
+        w.setMdskip=function(v){l=l?l(v):v;}
+        try{
+            var head=d.head || d.getElementsByTagName("head")[0];
+            var script=d.createElement("script");
+            head.insertBefore(script,head.firstChild);
+            script.src=url+'&'+arr.join("&");
+        }
+        catch(err){
+            d.write('<script src="'+url+'&'+arr.join("&")+'" async="async"></'+'script>');
+        }
+    }catch(e){
+        w.onMdskip=null;
+        setTimeout(function(){throw err;},0);
+    }
+    }(window,document))
+</script>
